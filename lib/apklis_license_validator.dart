@@ -26,6 +26,8 @@ class ApklisLicenseValidator {
       license: map['license'] as String?,
       error: map['error'] as String?,
       statusCode: map['status_code'] as int?,
+      signedBody: map['signed_body'] as String?,
+      signature: map['signature'] as String?,
     );
   }
 
@@ -51,6 +53,8 @@ class ApklisLicenseValidator {
       license: map['license'] as String?,
       error: map['error'] as String?,
       statusCode: map['status_code'] as int?,
+      signedBody: map['signed_body'] as String?,
+      signature: map['signature'] as String?,
     );
   }
 }

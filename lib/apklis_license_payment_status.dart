@@ -12,6 +12,8 @@ class ApklisLicensePaymentStatus {
     this.license,
     this.error,
     this.statusCode,
+    this.signedBody,
+    this.signature,
   });
 
   /// El [paid]  almacena el estado del Payment en true | false
@@ -28,4 +30,12 @@ class ApklisLicensePaymentStatus {
 
   /// El [statusCode]  almacena el statusCode de error de la petición (si tiene)
   final int? statusCode;
+
+  /// Cuerpo crudo (JSON string) que la API de Apklis firmó.
+  /// Forwardear al backend junto con [signature] para verificar la firma RSA-SHA256
+  /// con la llave pública del grupo de licencias.
+  final String? signedBody;
+
+  /// Firma RSA-SHA256 (base64) del header `signature` de la respuesta de Apklis.
+  final String? signature;
 }
